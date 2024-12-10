@@ -87,11 +87,15 @@ class _LoadingProgressbarExampleState extends State<LoadingProgressbarExample> {
     return LoadingProgressbar(
       controller: controller,
       progressbar: (context, progress) {
-        return const CircularProgressIndicator();
+        return SizedBox(
+          width:48.0,
+          height: 48.0,
+          child: const CircularProgressIndicator(strokeWidth: 9.0,)
+        );
       },
       transitionDuration: const Duration(seconds: 2),
       child: Scaffold(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Theme.of(context).primaryColor,
         body: const Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -167,7 +171,7 @@ class _MultiLoadingProgressbarExampleState extends State<MultiLoadingProgressbar
       ],
       transitionDuration: const Duration(seconds: 2),
       child: Scaffold(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Theme.of(context).primaryColor,
         body: const Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
